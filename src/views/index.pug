@@ -1,8 +1,4 @@
-html
-  head
-    title= title
-    link(rel="stylesheet", href="/styles/style.css")
-  body
-    h1= message
-  
-  script(src="/scripts/app.js")
+extends components/layout.pug
+
+block content
+  h1= message
