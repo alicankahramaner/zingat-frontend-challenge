@@ -1,13 +1,25 @@
+@import 'helper';
+// Pages
+@import './pages/login';
+// Components
+@import './components/form';
+
 body {
-    background-color: gray;
-    color:black;
-  
-    &.dark {
-      background-color: #333;
-      color: blue;
-      box-shadow: 0px 0px 0px red;
-      &::fullscreen{
-        border:1px solid red;
-      }
-    }
+  color: black;
+  display: flex;
+  margin:0;
+  padding:0;
+  flex-direction: column;
+}
+
+.welcome-page{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  a{
+    color:#333;
+    font-weight: bold;
   }
+}

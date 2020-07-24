@@ -1,0 +1,23 @@
+.form-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-bottom: 10px;
+    label {
+        font-weight: 400;
+        flex-basis: content;
+        line-height: 30px;
+        &:after {
+            content: ":";
+            display: inline-block;
+            margin: 0px 5px;
+        }
+    }
+    input{
+        height: 30px;
+        font-size: 13px;
+    }
+}
+
+button{
+
+}

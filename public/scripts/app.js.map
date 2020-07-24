@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["app.js"],"sourcesContent":["window.addEventListener('load', function () {\n    console.info('DOM is loaded');\n});"],"file":"app.js"}

@@ -1,4 +1,4 @@
-const configFile = require('./config.json');
+const configFile = require('../../config.json');
 
 let config = {
     source: configFile.source,

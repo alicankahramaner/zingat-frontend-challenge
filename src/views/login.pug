@@ -1,0 +1,14 @@
+extends components/layout.pug
+
+block content
+  .container
+    h1 Login
+    form(action="/login", method="post").login-form
+        .form-item
+            label(for="username") E-Mail
+            input(type="text", name="username")
+        .form-item
+            label(for="password") Password
+            input(type="password", name="password")
+        button(type="submit").pull-right Login
+    

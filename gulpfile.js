@@ -1,12 +1,13 @@
 const gulp = require('gulp');
 const config = require('./config');
+const fs = require('fs');
+const path = require('path');
 const sourcemaps = require('gulp-sourcemaps');
 const gulp_sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const postcsso = require('postcss-csso');
-const fs = require('fs');
-const path = require('path');
+const gulpminify = require('gulp-minify');
 
 const taskPaths = {
     style: {
@@ -48,6 +49,14 @@ gulp.task('style', style);
 //#region Script
 const script = (cb) => {
     gulp.src(taskPaths.script.src)
+        .pipe(sourcemaps.init())
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulpminify({
+            ext: {
+                min: '.min.js',
+            },
+            noSource: true
+        }))
         .pipe(gulp.dest(taskPaths.script.dest))
     cb();
 };
