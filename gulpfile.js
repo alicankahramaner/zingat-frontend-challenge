@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const config = require('./config');
+const config = require('./src/helpers/config');
 const fs = require('fs');
 const path = require('path');
 const sourcemaps = require('gulp-sourcemaps');
