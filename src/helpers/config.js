@@ -15,7 +15,7 @@ switch (mode) {
         config.port = configFile.dev.port;
         break;
     case 'prod':
-        config.port = configFile.prod.port;
+        config.port = process.env.PORT || configFile.prod.port;
         config.env = 'prod'
         break;
     default:
