@@ -48,7 +48,6 @@ gulp.task('style', style);
 
 //#region Script
 const script = (cb) => {
-    console.log(taskPaths.script.src);
     gulp.src(taskPaths.script.src)
         .pipe(sourcemaps.init())
         .pipe(sourcemaps.write('.'))
