@@ -12,6 +12,7 @@ module.exports = () => {
 
     LoginRoute.post('/login', (req, res) => {
         let data = req.body;
+        
         if (isNullOrUndefinedOrEmpty(data.username) || isNullOrUndefinedOrEmpty(data.password)) {
             res.send(ResponseType(
                 false,
@@ -25,7 +26,7 @@ module.exports = () => {
             return;
         }
 
-        let auth = authentication.login(req, res);
+        let auth = authentication.login(data, res);
         res.send(ResponseType(
             auth,
             auth ? true : false,
