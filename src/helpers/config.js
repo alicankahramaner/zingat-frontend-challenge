@@ -8,7 +8,6 @@ let config = {
 };
 
 let mode = process.env.mode;
-console.log(process.env.PORT);
 switch (mode) {
     case 'dev':
         config.port = configFile.dev.port;
