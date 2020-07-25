@@ -25,6 +25,10 @@ npm run build
 ### Development
 Geliştirme sürecinde projeyi çalıştırmak için kullanılır ve public assets'ler (scss,js) wathc edilir değişiklikler compile edilir. Aynı zamanda express projeside nodemon da başlatılır ve express tarafındaki değişiklikler de uygulama yeniden başlatılır.
 
+``
+npm run dev
+``
+
 ### Usaged technologies
 
 | Name             |
