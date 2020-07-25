@@ -7,7 +7,7 @@
     "start": "cross-env mode=prod npm run build && cross-env mode=prod node index.js",
     "dev": "cross-env mode=dev gulp & cross-env mode=dev nodemon index.js",
     "heroku-prebuild": "npm i",
-    "heroku-postbuild": "npm run start"
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
