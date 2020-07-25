@@ -15,7 +15,7 @@ const taskPaths = {
         dest: path.join(config.destination, 'styles')
     },
     script: {
-        src: path.join(config.source, 'scripts', '*.js'),
+        src: path.join(config.source, 'scripts', 'app.js'),
         dest: path.join(config.destination, 'scripts')
     }
 }
@@ -48,6 +48,7 @@ gulp.task('style', style);
 
 //#region Script
 const script = (cb) => {
+    console.log(taskPaths.script.src);
     gulp.src(taskPaths.script.src)
         .pipe(sourcemaps.init())
         .pipe(sourcemaps.write('.'))

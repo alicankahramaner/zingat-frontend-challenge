@@ -3,19 +3,17 @@ const users = require('../../dummyDB.json').users;
 class Authentication {
     sessions = [];
 
-    login(req, res) {
-        let data = req.body;
+    login(data = { username: '', password: '' }, res) {
 
         let user = users.find(u => u.username === data.username && u.password === data.password);
 
         if (!user) {
-            this.toLogin(res);
             return false;
         }
 
         let sessionKey = this.createSession(user);
         res.cookie('session', sessionKey);
-        return true;
+        return sessionKey;
     }
 
     createSession(user) {
@@ -32,7 +30,7 @@ class Authentication {
         return Math.random().toString(20).substr(2, 5);
     }
 
-    logout(req, res) {
+    logout(res) {
         if (session === null) {
             return false;
         }

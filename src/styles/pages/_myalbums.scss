@@ -1,0 +1,32 @@
+.albumList {
+    border: 1px solid $gray;
+    border-radius: $borderRadius;
+    a {
+        text-decoration: none;
+        display: block;
+        padding: 5px 15px;
+
+        &.active {
+            font-weight: bold;
+        }
+        &:not(:last-child) {
+            border-bottom: 1px solid $gray;
+        }
+    }
+}
+
+#albumImages{
+    img{
+        width: 150px;
+        height: 150px;
+        cursor: pointer;
+    }
+}
+
+#previewAlbumImage{
+    img{
+        max-width: 100%;
+        margin:15px auto;
+        display: block;
+    }
+}

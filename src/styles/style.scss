@@ -1,8 +1,11 @@
+@import 'variables';
 @import 'helper';
 // Pages
 @import './pages/login';
+@import './pages/myalbums';
 // Components
 @import './components/form';
+@import './components/loading';
 
 body {
   color: black;

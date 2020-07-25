@@ -12,12 +12,18 @@
             margin: 0px 5px;
         }
     }
-    input{
+    input {
         height: 30px;
         font-size: 13px;
     }
 }
 
-button{
-
+button {
+    &[type="submit"] {
+        background-color: $blue;
+        color: $white;
+        border: none;
+        padding: 6px 10px;
+        border-radius: $borderRadius;
+    }
 }
