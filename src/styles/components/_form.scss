@@ -2,6 +2,12 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     margin-bottom: 10px;
+
+    @include mobile-breakpoint(){
+        grid-template-columns: 1fr;
+        padding: 0px 15px;
+    }
+
     label {
         font-weight: 400;
         flex-basis: content;

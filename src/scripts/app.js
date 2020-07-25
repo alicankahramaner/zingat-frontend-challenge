@@ -92,6 +92,7 @@ var App = {
         albumLinkList: document.getElementById('albumList'),
         albumImages: document.getElementById('albumImages'),
         previewAlbumImage = document.getElementById('previewAlbumImage'),
+
         init() {
             this.getAlbumList();
         },
@@ -128,6 +129,11 @@ var App = {
                 return;
             }
 
+            let img = this.previewAlbumImage.querySelector('img');
+            if (img) {
+                this.previewAlbumImage.removeChild(img);
+            }
+
             let activeItem = this.albumLinkList.querySelector('.active');
             if (activeItem) {
                 activeItem.classList.remove('active');
@@ -159,17 +165,26 @@ var App = {
                 img.dataset.fullsize = image.url;
 
                 img.onclick = (event) => {
-                    this.getAlbumPhotoFullSize(image.url);
+                    this.getAlbumPhotoFullSize(event.target, image.url);
                 }
 
                 this.albumImages.appendChild(img);
             });
         },
 
-        getAlbumPhotoFullSize(src = '') {
+        getAlbumPhotoFullSize(clickedImage, src = '') {
             if (src === '') {
                 return;
             }
+
+            let activeItem = this.albumImages.querySelector('.active');
+            console.log('active img',activeItem);
+            if (activeItem) {
+                activeItem.classList.remove('active');
+            }
+
+            clickedImage.classList.add('active');
+
             let img = this.previewAlbumImage.querySelector('img');
             if (!img) {
                 img = document.createElement('img');

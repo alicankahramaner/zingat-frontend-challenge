@@ -1,13 +1,25 @@
 .albumList {
     border: 1px solid $gray;
     border-radius: $borderRadius;
+
+    @include mobile-breakpoint() {
+        margin-bottom: 15px;
+    }
+
     a {
         text-decoration: none;
         display: block;
         padding: 5px 15px;
-
-        &.active {
+        font-size: 14px;
+        color: $gray;
+        transition: all ease-in-out $transitionDelay;
+        &:hover {
             font-weight: bold;
+        }
+        &.active {
+            color: $green;
+            font-weight: bold;
+            background-color: #eee;
         }
         &:not(:last-child) {
             border-bottom: 1px solid $gray;
@@ -15,18 +27,26 @@
     }
 }
 
-#albumImages{
-    img{
-        width: 150px;
-        height: 150px;
+#albumImages {
+    img {
+        width: 140px;
+        height: 140px;
         cursor: pointer;
+        border: 1px solid $green;
+        margin: 5px;
+        border-radius: $borderRadius;
+        transition: all ease-in-out $transitionDelay;
+
+        &.active {
+            transform: scale(1.1);
+        }
     }
 }
 
-#previewAlbumImage{
-    img{
+#previewAlbumImage {
+    img {
         max-width: 100%;
-        margin:15px auto;
+        margin: 15px auto;
         display: block;
     }
 }
