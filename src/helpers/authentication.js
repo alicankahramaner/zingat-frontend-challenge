@@ -5,7 +5,6 @@ class Authentication {
 
     login(data = { username: '', password: '' }, res) {
 
-        console.log(data);
         let user = users.find(u => u.username === data.username && u.password === data.password);
 
         if (!user) {
